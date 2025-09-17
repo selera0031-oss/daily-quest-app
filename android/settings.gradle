@@ -1,6 +1,15 @@
 include ':app'
 
-def flutterProjectRoot = rootProject.projectDir.parentFile.toPath()
-def flutterSettingsGradle = new File(flutterProjectRoot.toFile(), '.android/include_flutter.groovy')
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
 
-apply from: flutterSettingsGradle
+plugins {
+    id "dev.flutter.flutter-plugin-loader" version "1.0.0"
+}
+
+include(":app")
