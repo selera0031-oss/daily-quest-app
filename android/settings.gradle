@@ -1,2 +1,6 @@
-rootProject.name = "daily_quest_app"
 include ':app'
+
+def flutterProjectRoot = rootProject.projectDir.parentFile.toPath()
+def flutterSettingsGradle = new File(flutterProjectRoot.toFile(), '.android/include_flutter.groovy')
+
+apply from: flutterSettingsGradle
